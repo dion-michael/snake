@@ -1,0 +1,28 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Snake by Dion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/styles.css" type="text/css" rel="stylesheet">
+    <script src="test.js"></script>
+</head>
+<body> 
+    <div class="center">
+        <h1 id="title">Snake - by Dion</h1>
+        <textarea id="nameInput" placeholder="Insert your name here">Your name here</textarea>
+        <!-- <button onclick="hide()">hide title</button> -->
+        <div>
+            <a onclick='localStorage.setItem("speed",150);' href="snake.html">Easy</a>
+            <a onclick='localStorage.setItem("speed",100);' href="snake.html">Medium</a>
+            <a onclick='localStorage.setItem("speed",50);' href="snake.html">Hard</a>
+        </div>
+        <a href="#" class="leaderboard">Leaderboard</a>
+    </div>  
+    <script>
+        var name = document.getElementById('nameInput').value
+        localStorage.setItem('name', name)
+    </script>
+    
+</body>
+</html>

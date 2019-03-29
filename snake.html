@@ -1,0 +1,36 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Snake by Dion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/styles.css" type="text/css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="center" id= "alwaysTop">GAME OVER</div>
+    
+    <div class="center">
+        <div class="status">
+            <p id="score">0</p>
+        </div>
+        <canvas id='gameCanvas' width='600' height="600"><h1>adf</h1></canvas>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAG2Nkw1fKuEiNiY8S6jDKlD1u0e4w_Kyo",
+        authDomain: "snakebydion.firebaseapp.com",
+        databaseURL: "https://snakebydion.firebaseio.com",
+        projectId: "snakebydion",
+        storageBucket: "snakebydion.appspot.com",
+        messagingSenderId: "141339562216"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="js/snake.js"></script>
+
+    
+</body>
+</html>

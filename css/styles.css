@@ -1,0 +1,40 @@
+#score{
+    width: 300px;
+}
+
+.center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center
+}
+
+#alwaysTop{
+    z-index: 10;
+    color: white;
+    display: none
+}
+
+.status{
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+    text-align: center
+}
+
+#gameCanvas{
+    margin: 0;
+    padding: 0
+}
+
+#nameInput{
+    display: block; 
+    width: 100%; 
+    text-align: center; 
+    margin-bottom: 20
+}
+
+.leaderboard{
+    margin-top: 20px
+}
