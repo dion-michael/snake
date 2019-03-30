@@ -3,5 +3,7 @@ function tes(){
     firebaseRef.child('1234').set('dion')
 }
 function hide(){
-    document.getElementById("title").style.display = "none";
+    var text = document.getElementById("nameInput").value
+    alert(text)
+
 }

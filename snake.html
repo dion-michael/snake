@@ -5,17 +5,25 @@
     <title>Snake by Dion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/styles.css" type="text/css" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 </head>
 <body>
-    <div class="center" id= "alwaysTop">GAME OVER</div>
+    <div class="center game-over" id= "alwaysTop">
+        <h2>GAME OVER</h2>
+        <h5>Your Score:</h5>
+        <h5 id="score-died">0</h5>
+        <a class="button" style = 'display: block' href="snake.html">Try Again</a>
+        <a class="button" href="index.html">Main Menu</a>
+    </div>
     
-    <div class="center">
+    <div class="center game-container">
         <div class="status">
+            <p>SCORE</p>
             <p id="score">0</p>
         </div>
         <canvas id='gameCanvas' width='600' height="600"><h1>adf</h1></canvas>
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script>
     // Initialize Firebase
@@ -30,6 +38,11 @@
     firebase.initializeApp(config);
     </script>
     <script src="js/snake.js"></script>
+    <script>
+        function refresh(){
+            window.location.replace('snake.html')
+        }
+    </script>
 
     
 </body>

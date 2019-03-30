@@ -57,12 +57,7 @@ function main(){
     if(didGameEnd()) {
         writeHighScore()
         document.getElementById("alwaysTop").style.display = "inline";
-        // var msg = 'Game Over \n Score: ' + score
-        // alert(msg)
-        // if(!alert(msg)){
-        //     window.location.replace('index.html')
-        //     return
-        // }
+        document.getElementById('score-died').innerHTML = score
         return
     }
     

@@ -6,23 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/styles.css" type="text/css" rel="stylesheet">
     <script src="test.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet"> 
 </head>
 <body> 
-    <div class="center">
-        <h1 id="title">Snake - by Dion</h1>
-        <textarea id="nameInput" placeholder="Insert your name here">Your name here</textarea>
-        <!-- <button onclick="hide()">hide title</button> -->
-        <div>
-            <a onclick='localStorage.setItem("speed",150);' href="snake.html">Easy</a>
-            <a onclick='localStorage.setItem("speed",100);' href="snake.html">Medium</a>
-            <a onclick='localStorage.setItem("speed",50);' href="snake.html">Hard</a>
+    <div class="main-menu-container">
+        <div class="center">
+            <h1 id="title">Snake - by Dion</h1>
+            <input type="text" id="nameInput" name='nameInput' placeholder="Your Name" required></input>
+            <!-- <button onclick="hide()">hide title</button> -->
+            <div class="difficulty">
+                <script>
+                    function save(speed){
+                        var name = document.getElementById('nameInput').value
+                        if(!name || name === ""){
+                            return displayError()
+                        }
+                        else{
+                            localStorage.setItem("name", name)
+                            localStorage.setItem("speed", speed)
+                            window.location.replace("snake.html")
+                        }
+                    }   
+
+                    function displayError(){
+                        var msg = 'Please input your name'
+                        alert(msg)
+                        window.location.reload
+                    }
+                </script>
+                <a class="button" onclick='save(150)'>Easy</a>
+                <a class="button" onclick='save(100)'>Medium</a>
+                <a class="button" onclick='save(50)'>Hard</a>
+            </div>
+            <a href="#" class="leaderboard" onclick="hide()">Leaderboard</a>
         </div>
-        <a href="#" class="leaderboard">Leaderboard</a>
-    </div>  
-    <script>
-        var name = document.getElementById('nameInput').value
-        localStorage.setItem('name', name)
-    </script>
+    </div>
+      
+    
     
 </body>
 </html>

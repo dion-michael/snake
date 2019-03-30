@@ -1,5 +1,23 @@
-#score{
-    width: 300px;
+html{
+    font-family: 'Oxygen', sans-serif;
+}
+
+.score{
+
+}
+
+.main-menu-container{
+    background-color: #283747;
+    text-align: center
+}
+
+input[type="text"]{
+    display: block;
+    margin: 0 auto;
+}
+
+.difficulty{
+    margin-bottom: 20px
 }
 
 .center{
@@ -7,7 +25,28 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    text-align: center
+    text-align: center;
+}
+
+.game-over h5{
+    display: inline
+}
+
+.game-over a{
+    text-decoration: none;
+    color: white;
+}
+
+.button{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px
+}
+
+.button:hover{
+    background-color: #FFC300;
+    color: #283747
 }
 
 #alwaysTop{
@@ -17,10 +56,9 @@
 }
 
 .status{
-    background-color: antiquewhite;
-    margin: 0;
+    margin: 20;
     padding: 0;
-    text-align: center
+    text-align: left
 }
 
 #gameCanvas{
@@ -30,11 +68,19 @@
 
 #nameInput{
     display: block; 
-    width: 100%; 
+    width: 80%; 
     text-align: center; 
     margin-bottom: 20
 }
 
 .leaderboard{
     margin-top: 20px
+}
+
+.game-container{
+    background-color: antiquewhite
+}
+
+.status p{
+    display: inline
 }
