@@ -21,7 +21,7 @@ console.log(playerName)
 let dx = 10 //horizontal velocity
 let dy = 0 //vertical velocity
 let speed = Number(localStorage.getItem("speed"))
-console.log(speed)
+// console.log(speed)
 let score = 0
 
 var gameCanvas = document.getElementById('gameCanvas')
@@ -40,6 +40,9 @@ createFood()
 //add controls
 document.addEventListener('keydown', changeDirection)
 
+var getName = document.getElementById('username')
+getName.innerHTML = playerName
+
 //draw the snake
 drawSnake()
 
@@ -48,7 +51,23 @@ main()
 
 function writeHighScore(){
     var firebaseRef = firebase.database().ref()
-    firebaseRef.child(playerName).set(score)
+    if(firebaseRef.child(playerName)){
+        var scoreRef = firebaseRef.child(playerName)
+        var test = 0
+        scoreRef.once("value", function(snapshot){
+            var scoreFromDB = snapshot.val()
+            test = scoreFromDB
+            console.log(scoreFromDB)
+        })
+        if(test < score){
+            firebaseRef.child(playerName).set(score)
+        }
+        else{
+            return
+        }
+        console.log(test)
+    }
+    // firebaseRef.child(playerName).set(score)
 }
 
 

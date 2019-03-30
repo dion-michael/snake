@@ -11,18 +11,24 @@
 <body> 
     <div class="main-menu-container">
         <div class="center">
-            <h1 id="title">SNAKE</h1>
+            <a href="index.html">
+                <img class='logo' src='./img/logo.png'>
+            </a>
             <input type="text" id="nameInput" name='nameInput' placeholder="Your Name" required></input>
             <!-- <button onclick="hide()">hide title</button> -->
             <div class="difficulty">
-                <a class="button" onclick='save(150)'>Easy</a>
-                <a class="button" onclick='save(100)'>Medium</a>
-                <a class="button" onclick='save(50)'>Hard</a>
+                <a class="button" id="easy" onclick='save(150)'>Easy</a>
+                <a class="button" id="medium" onclick='save(100)'>Medium</a>
+                <a class="button" id="hard" onclick='save(50)'>Hard</a>
             </div>
-            <a href="#" class="leaderboard" onclick="hide()">Leaderboard</a>
+            <div class="leaderboard">
+                <a id="leaderboard-button" href="leaderboard.html">Leaderboard</a>
+            </div>
+            <div class="profile">
+                <a>&copy; dion michael 2019</a>
+            </div>
         </div>
     </div>
-
 
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script>
@@ -57,12 +63,18 @@
     </script>
     <script>
         var ref = firebase.database().ref();
+        var obj = {}
         ref.on("value", function(snapshot) {
             console.log(snapshot.val());
+            var keys = Object.keys(snapshot.val())
+            for(var x=0; x<keys.length; x++){
+                console.log(keys[x] + snapshot.val()[keys[x]])
+            }
         }, 
         function (error) {
             console.log("Error: " + error.code);
         });
+        console.log(Object.keys(obj))
     </script>
 </body>
 </html>

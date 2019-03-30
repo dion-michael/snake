@@ -18,11 +18,21 @@
     
     <div class="center game-container">
         <div class="status">
-            <p>SCORE</p>
-            <p id="score">0</p>
+            <div id="rightdiv">
+                <p id="username"></p><br>
+                <p>SCORE</p>
+                <p id="score">0</p>
+            </div>
+            <div id="leftdiv">
+                <img class='logo-small' src='./img/logo-white.png'>
+            </div>
         </div>
         <canvas id='gameCanvas' width='600' height="600"><h1>adf</h1></canvas>
+        <div class="explanation">
+            <p>control the snake with arrow keys / WASD</p>
+        </div>
     </div>
+    
 
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script>
@@ -40,7 +50,7 @@
     <script src="js/snake.js"></script>
     <script>
         function refresh(){
-            window.location.replace('snake.html')
+            window.location.reload
         }
     </script>
 

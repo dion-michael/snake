@@ -1,9 +1,33 @@
+@font-face {
+    font-family: "Minecraft";
+    src: url('font/Minecraft.ttf');
+    }
+
 html{
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Minecraft', sans-serif;
+    background-color: #283747
 }
 
 .score{
+    font-weight: bold;
+    color: white;
+}
 
+.button-return{
+    text-decoration: none;
+    background-color: #95ba3d;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.button-return a{
+    text-decoration: none;
+    color: #283747;
+}
+
+.button-return:hover{
+    font-size: 20px
 }
 
 .main-menu-container{
@@ -17,13 +41,49 @@ html{
     transform: translate(-50%, -50%)
 }
 
+.logo-small{
+    height: 30px;
+    width: auto
+}
+
 .main-menu-container h1, a{
     color: white
+}
+
+.leaderboard-container h2{
+    color: #95ba3d
+}
+
+#leaderboard-list{
+    color: #95ba3d;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#leaderboard-list li{
+    margin-bottom: 10px;
+}
+
+.logo{
+    height: 50px;
+    width: auto;
+    padding-bottom: 20px
 }
 
 input[type="text"]{
     display: block;
     margin: 0 auto;
+    border: 5px solid #95ba3d;
+    border-radius: 20px;
+    background-color: #283747;
+    height: 40px;
+    color: #95ba3d;
+    font-family: 'Minecraft', serif;
+    text-transform: uppercase;
+}
+
+canvas{
+    border: #95ba3d 20px solid;
 }
 
 .difficulty{
@@ -48,47 +108,117 @@ input[type="text"]{
 }
 
 .button{
-    border: 1px solid white;
-    border-radius: 10px;
     padding: 5px;
-    margin: 20px
+    margin: 20px;
+    color: #95ba3d;
+}
+
+.firebase{
+    margin-top: 50px;
+    height: 50px;
+    width: auto;
+}
+
+.button-start{
+    padding: 10px 50px;
+    background-color: #95ba3d;
+    border-radius: 20px;
+    font-size: 20pt;
+    margin: 20px;
+}
+
+.leaderboard{
+    margin-top: 20px;
+    text-decoration: none;
+    color: #95ba3d;
+}
+
+.button-start:hover{
+    font-size: 24pt;
 }
 
 .button:hover{
-    background-color: #FFC300;
+    border-radius: 10px;
+    background-color: #95ba3d;
     color: #283747
+}
+
+#leaderboard-button{
+    color: #95ba3d;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#leftdiv
+{
+    float:left;
+    display: inline;
+}
+
+#rightdiv
+{
+    color: white;
+    float:right;
+    display: inline;
+}
+
+.profile{
+    margin-top: 50px;
+}
+
+.profile a{
+    font-size: 8pt;
+    text-transform: uppercase;
+}
+
+.score-holder{
+    display: inline;
+    width: 300px
+}
+
+.explanation{
+    color: white;
+    text-transform: uppercase;
+}
+
+.name-holder{
+    display: inline;
+    text-align: right;
+    width: 100%;
 }
 
 #alwaysTop{
     z-index: 10;
     color: white;
-    display: none
+    display: none;
 }
 
 .status{
     margin: 20;
     padding: 0;
-    text-align: left
+    text-align: left;
 }
 
 #gameCanvas{
     margin: 0;
-    padding: 0
+    padding: 0;
+}
+
+#username{
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold
 }
 
 #nameInput{
     display: block; 
-    width: 80%; 
-    text-align: center; 
-    margin-bottom: 20
-}
-
-.leaderboard{
-    margin-top: 20px
+    width: 80%;
+    text-align: center;
+    margin-bottom: 20;
 }
 
 .game-container{
-    background-color: antiquewhite
+    background-color: #95ba3d
 }
 
 .status p{
