@@ -5,35 +5,16 @@
     <title>Snake by Dion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/styles.css" type="text/css" rel="stylesheet">
-    <script src="test.js"></script>
+    <script src="./js/test.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet"> 
 </head>
 <body> 
     <div class="main-menu-container">
         <div class="center">
-            <h1 id="title">Snake - by Dion</h1>
+            <h1 id="title">SNAKE</h1>
             <input type="text" id="nameInput" name='nameInput' placeholder="Your Name" required></input>
             <!-- <button onclick="hide()">hide title</button> -->
             <div class="difficulty">
-                <script>
-                    function save(speed){
-                        var name = document.getElementById('nameInput').value
-                        if(!name || name === ""){
-                            return displayError()
-                        }
-                        else{
-                            localStorage.setItem("name", name)
-                            localStorage.setItem("speed", speed)
-                            window.location.replace("snake.html")
-                        }
-                    }   
-
-                    function displayError(){
-                        var msg = 'Please input your name'
-                        alert(msg)
-                        window.location.reload
-                    }
-                </script>
                 <a class="button" onclick='save(150)'>Easy</a>
                 <a class="button" onclick='save(100)'>Medium</a>
                 <a class="button" onclick='save(50)'>Hard</a>
@@ -41,8 +22,47 @@
             <a href="#" class="leaderboard" onclick="hide()">Leaderboard</a>
         </div>
     </div>
-      
-    
-    
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAG2Nkw1fKuEiNiY8S6jDKlD1u0e4w_Kyo",
+        authDomain: "snakebydion.firebaseapp.com",
+        databaseURL: "https://snakebydion.firebaseio.com",
+        projectId: "snakebydion",
+        storageBucket: "snakebydion.appspot.com",
+        messagingSenderId: "141339562216"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script>
+        function save(speed){
+            var name = document.getElementById('nameInput').value
+            if(!name || name === ""){
+                return displayError()
+            }
+            else{
+                localStorage.setItem("name", name)
+                localStorage.setItem("speed", speed)
+                window.location.replace("snake.html")
+            }
+        }   
+        function displayError(){
+            var msg = 'Please input your name'
+            alert(msg)
+            window.location.reload
+        }
+    </script>
+    <script>
+        var ref = firebase.database().ref();
+        ref.on("value", function(snapshot) {
+            console.log(snapshot.val());
+        }, 
+        function (error) {
+            console.log("Error: " + error.code);
+        });
+    </script>
 </body>
 </html>

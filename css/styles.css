@@ -8,7 +8,17 @@ html{
 
 .main-menu-container{
     background-color: #283747;
-    text-align: center
+    text-align: center;
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.main-menu-container h1, a{
+    color: white
 }
 
 input[type="text"]{
